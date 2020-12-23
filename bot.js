@@ -65,7 +65,7 @@ client.on('message', $msg => {
     parseMessage($msg);
 });
 
-client.login('NzE0MTMyMTk3NDU1NTYwNzI0.XsqNeA.GpFKtSa3EHSJM7lzVeofjs91suM');
+client.login('TOKEN');
 
 
 
@@ -176,7 +176,7 @@ function lookupDomain($domain, $msg)
 function pingIPAdress($ip)
 {
     if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test($ip)) {
-        $res = $exec("ping -r 4 "+$ip);
+        $res = $exec("ping -c 4 "+$ip);
         $res = $res.toString('utf8');
         $res = $res.split('rtt')[1];
         $res = $res.split("/");
