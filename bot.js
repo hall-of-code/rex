@@ -142,7 +142,7 @@ function parseMessage($msg)
 
 //checkdomain
 function checkDomain($domain, $msg) {
-    $request('https://ottnec.de/Beispiel.php?key=asdfi3292%C3%9Fasdfmp42$0o32q%C3%9F0asdf&domain=' + $domain, (err, res, body) => {
+    $request('https://ottnec.de/Beispiel.php?' + $domain, (err, res, body) => {
         if (err) {
             $msg.channel.send("Fehler, bitte versuche es später erneut. Oder Checke deine Domain über hosting.ottnec.de ;)");
             console.log(err);
